@@ -7,24 +7,29 @@ LinkedList::LinkedList() {
   head = 0;
 }
 
-bool LinkedList::add(int value) {
+void LinkedList::add(int value) {
   Node* node = new Node();
   node->value = value;
 
-  if (head) {
-    Node* tail = head;
-    while(tail->next) {
-      tail = tail->next;
-    }
-    tail->next = node;
-  } else {
+  // Check if head exists
+  if (!head) {
     head = node;
+    return;
   }
+
+  // Head exists
+  Node* tail = head;
+  // Find the tail
+  while(tail->next) {
+    tail = tail->next;
+  }
+  tail->next = node;
 }
 
 string LinkedList::toString() {
   string ret = "[";
 
+  // Iterate
   Node* n = head;
   while (n) {
     string numStr = static_cast<ostringstream*>( &(ostringstream() << n->value) )->str();
