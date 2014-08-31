@@ -11,12 +11,12 @@ int main() {
   cout << list->toString() << endl << endl;
 
   // Test invalid removal 
-  bool invalid = list->remove(3);
-  cout << "This should be false: " << invalid << endl;
+  bool valid = list->remove(3);
+  cout << "This should be false: " << valid << endl;
   cout << list->toString() << endl;
 
   // Test valid removal 
-  bool valid = list->remove(1);
+  valid = list->remove(1);
   cout << "This should be true: " << valid << endl;
   cout << list->toString() << endl;
 
