@@ -7,3 +7,4 @@ LinkedList::LinkedList() {
 bool LinkedList::add(int value) {
   Node* node = new Node();
 }
+  
