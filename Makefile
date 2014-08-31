@@ -1,6 +1,6 @@
 all:
 	@mkdir -p build
-	@g++ src/* test/LinkedListTest.cpp -o build/LinkedListTest
+	@g++ src/* test/LinkedListTest.cpp -o build/LinkedListTest -Wall -Wextra
 
 test-build:
 	@./build/*
