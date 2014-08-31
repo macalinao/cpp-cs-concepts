@@ -26,6 +26,21 @@ void LinkedList::add(int value) {
   tail->next = node;
 }
 
+bool LinkedList::remove(int index) {
+  Node* prev;
+  Node* node = head;
+  for (int i = 0; i < index; i++) {
+    prev = node;
+    if (!node->next) {
+      return false;
+    }
+    node = node->next;
+  }
+  prev->next = node->next;
+  delete node;
+  return true;
+}
+
 string LinkedList::toString() {
   string ret = "[";
 

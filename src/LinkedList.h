@@ -11,7 +11,7 @@ class LinkedList {
     LinkedList();
     ~LinkedList();
     void add(int value);
-    int remove(int index);
+    bool remove(int index);
     string toString();
   private:
     Node* head;
