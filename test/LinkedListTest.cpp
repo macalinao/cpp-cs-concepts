@@ -2,5 +2,6 @@
 #include "../src/LinkedList.h"
 
 int main() {
-  printf("Hello\n");
+  LinkedList* list = new LinkedList();
+  list->add(1);
 }
