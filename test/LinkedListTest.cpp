@@ -19,4 +19,21 @@ int main() {
   bool valid = list->remove(1);
   cout << "This should be true: " << valid << endl;
   cout << list->toString() << endl;
+
+  // Test removal of first
+  valid = list->remove(0);
+  cout << "This should be true: " << valid << endl;
+  cout << list->toString() << endl;
+
+  // Restore
+  list = new LinkedList();
+  list->add(1);
+  list->add(13);
+  list->add(3);
+
+  // Test indexOf
+  int index = list->indexOf(13);
+  cout << "This should be 1: " << index << endl;
+  index = list->indexOf(2);
+  cout << "This should be -1: " << index << endl;
 }

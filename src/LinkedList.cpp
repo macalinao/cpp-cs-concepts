@@ -27,18 +27,45 @@ void LinkedList::add(int value) {
 }
 
 bool LinkedList::remove(int index) {
+  // Remove first
+  if (index == 0) {
+    head = head->next;
+    return true;
+  }
+
+  // Iterate
   Node* prev;
   Node* node = head;
   for (int i = 0; i < index; i++) {
-    prev = node;
     if (!node->next) {
       return false;
     }
+    prev = node;
     node = node->next;
   }
+
+  // Delete old node
   prev->next = node->next;
   delete node;
   return true;
+}
+
+int LinkedList::indexOf(int value) {
+  Node* node = head;
+  // Loop forever
+  for (int i = 0;; i++) {
+    // Check if value is equal
+    if (node->value == value) {
+      return i;
+    }
+
+    // If we're out, return -1
+    if (!node->next) {
+      return -1;
+    }
+
+    node = node->next;
+  }
 }
 
 string LinkedList::toString() {
