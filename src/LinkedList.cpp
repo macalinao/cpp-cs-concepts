@@ -1,4 +1,7 @@
 #include "LinkedList.h"
+#include <iomanip>
+#include <locale>
+#include <sstream>
 
 LinkedList::LinkedList() {
   head = 0;
@@ -7,8 +10,13 @@ LinkedList::LinkedList() {
 bool LinkedList::add(int value) {
   Node* node = new Node();
   node->value = value;
+
   if (head) {
-    head->next = node;
+    Node* tail = head;
+    while(tail->next) {
+      tail = tail->next;
+    }
+    tail->next = node;
   } else {
     head = node;
   }
@@ -19,10 +27,15 @@ string LinkedList::toString() {
 
   Node* n = head;
   while (n) {
-    ret += n->value;
-    n = head->next;
+    string numStr = static_cast<ostringstream*>( &(ostringstream() << n->value) )->str();
+    ret += numStr;
+    n = n->next;
+    if (n) {
+      ret += ", ";
+    }
   }
 
+  ret += "]";
   return ret;
 }
 
