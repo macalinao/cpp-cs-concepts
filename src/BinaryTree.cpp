@@ -51,3 +51,25 @@ void BinaryTree::insert(int key) {
     }
   }
 }
+
+/**
+ * This just checks to see if the given key is present in the tree.
+ * It should be O(log n) due to the tree being sorted.
+ * We aren't a red black tree though, so it will have a worst case of O(n)
+ */
+BinaryTreeNode* BinaryTree::search(int key) {
+  BinaryTreeNode* node = head;
+  for (;;) {
+    if (!node) {
+      return 0;
+    }
+
+    if (key < node->value) {
+      node = node->left;
+    } else if (key > node->value) {
+      node = node->right;
+    } else if (key == node->value) {
+      return node;
+    }
+  }
+}

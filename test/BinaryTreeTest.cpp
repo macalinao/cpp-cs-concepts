@@ -13,4 +13,6 @@ int main() {
   tree->insert(25);
 
   cout << "Size should be 6: " << tree->size() << endl;
+  cout << "This should be true: " << (tree->search(5) != 0) << endl;
+  cout << "This should be false: " << tree->search(82) << endl;
 }
