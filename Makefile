@@ -13,4 +13,4 @@ linkedlist-test:
 	$(CPP_COMPILE) test/LinkedListTest.cpp -o build/linkedlist-test
 	./build/linkedlist-test
 
-.PHONY: all test-build test
+.PHONY: all clean test
