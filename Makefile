@@ -1,3 +1,5 @@
+CPP_COMPILE=g++ src/* -Wall -Wextra
+
 all: clean linkedlist-test
 
 clean:
@@ -7,7 +9,8 @@ clean:
 test: all
 	@./build/*
 
-linkedlist-test: 
-	@g++ src/* test/LinkedListTest.cpp -o build/linkedlist-test -Wall -Wextra
+linkedlist-test:
+	$(CPP_COMPILE) test/LinkedListTest.cpp -o build/linkedlist-test
+	./build/linkedlist-test
 
 .PHONY: all test-build test
