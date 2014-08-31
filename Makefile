@@ -1,10 +1,13 @@
-all:
-	@mkdir -p build
-	@g++ src/* test/LinkedListTest.cpp -o build/LinkedListTest -Wall -Wextra
+all: clean linkedlist-test
 
-test-build:
+clean:
+	@rm -rf build/
+	@mkdir -p build/
+
+test: all
 	@./build/*
 
-test: all test-build
+linkedlist-test: 
+	@g++ src/* test/LinkedListTest.cpp -o build/linkedlist-test -Wall -Wextra
 
 .PHONY: all test-build test
