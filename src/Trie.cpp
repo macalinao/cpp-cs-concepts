@@ -43,7 +43,7 @@ bool Trie::add(string val) {
   return created;
 }
 
-bool Trie::search(string val) {
+TrieNode* Trie::search(string val) {
   TrieNode* node = top;
   // Iterate and create nodes if they don't exist
   for (int i = 0; val[i] != '\0'; i++) {
@@ -61,8 +61,8 @@ bool Trie::search(string val) {
     }
 
     if (!found) {
-      return false;
+      return 0;
     }
   }
-  return node->isWord;
+  return node->isWord ? node : 0;
 }

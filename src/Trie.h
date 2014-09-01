@@ -15,7 +15,7 @@ class Trie {
     Trie();
     bool add(string val);
     bool remove(string val);
-    bool search(string val);
+    TrieNode* search(string val);
   private:
     TrieNode* top; 
 };
