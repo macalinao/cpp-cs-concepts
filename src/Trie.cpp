@@ -43,6 +43,15 @@ bool Trie::add(string val) {
   return created;
 }
 
+bool Trie::remove(string val) {
+  TrieNode* find = search(val);
+  if (!find || !find->isWord) {
+    return false;
+  }
+  find->isWord = false;
+  return true;
+}
+
 TrieNode* Trie::search(string val) {
   TrieNode* node = top;
   // Iterate and create nodes if they don't exist

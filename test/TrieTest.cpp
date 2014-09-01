@@ -11,4 +11,7 @@ int main() {
   cout << "This should be false: " << trie->search("aaragus") << endl;
   cout << "This should be false: " << trie->search("asparaguse") << endl;
   cout << "This should be false: " << trie->search("asparagu") << endl;
+  cout << "Removal should be false: " << trie->remove("asparagu") << endl;
+  cout << "Removal should be true: " << trie->remove("asparagus") << endl;
+  cout << "This should now be false: " << (trie->search("asparagus") != 0) << endl;
 }
