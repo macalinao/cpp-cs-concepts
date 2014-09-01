@@ -17,4 +17,8 @@ binarytree-test:
 	$(CPP_COMPILE) test/BinaryTreeTest.cpp -o build/binarytree-test
 	./build/binarytree-test
 
+trie-test:
+	$(CPP_COMPILE) test/TrieTest.cpp -o build/trie-test
+	./build/trie-test
+
 .PHONY: all clean test
