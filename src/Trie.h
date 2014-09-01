@@ -6,6 +6,7 @@ using namespace std;
 struct TrieNode {
   TrieNode(char val): val(val) {}
   char val;
+  bool isWord;
   vector<TrieNode*> nodes;
 };
 

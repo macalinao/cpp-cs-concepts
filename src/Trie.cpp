@@ -8,7 +8,7 @@ bool Trie::add(string val) {
   TrieNode* node = top;
   bool created;
   // Iterate and create nodes if they don't exist
-  for (int i = 0; val[i] != '\0'; i++) {
+  for (int i = 0; i < (int) val.size(); i++) {
     char c = val[i];
 
     // Find the node
@@ -30,6 +30,9 @@ bool Trie::add(string val) {
     if (!next) {
       created = true;
       next = new TrieNode(c);
+      if (i == (int) val.size() - 1) {
+        next->isWord = true;
+      }
       nodes->push_back(next);
     }
 
@@ -61,5 +64,5 @@ bool Trie::search(string val) {
       return false;
     }
   }
-  return true;
+  return node->isWord;
 }
