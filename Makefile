@@ -17,6 +17,10 @@ linkedlist-test:
 	$(CPP_COMPILE) test/LinkedListTest.cpp -o build/linkedlist-test
 	./build/linkedlist-test
 
+queue-test:
+	$(CPP_COMPILE) test/QueueTest.cpp -o build/queue-test
+	./build/queue-test
+
 stack-test:
 	$(CPP_COMPILE) test/StackTest.cpp -o build/stack-test
 	./build/stack-test
