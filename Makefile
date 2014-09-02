@@ -29,4 +29,8 @@ trie-test:
 	$(CPP_COMPILE) test/TrieTest.cpp -o build/trie-test
 	./build/trie-test
 
+vector-test:
+	$(CPP_COMPILE) test/VectorTest.cpp -o build/vector-test
+	./build/vector-test
+
 .PHONY: all clean test
