@@ -11,7 +11,7 @@ int main() {
 
   cout << "This should be numbers from 0-16: ";
   for (int i = 0; i < v->size; i++) {
-    cout << v->data[i] << " ";
+    cout << (*v)[i] << " ";
   }
   cout << endl;
   cout << "This should be 32: " << v->getCapacity() << endl;
