@@ -18,6 +18,7 @@ void Vector::reserve(int newCapacity) {
   capacity = newCapacity;
   int* newData = new int[capacity];
   memcpy(newData, data, sizeof(int) * size);
+  delete[] data;
   data = newData;
 }
 
