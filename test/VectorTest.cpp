@@ -15,4 +15,8 @@ int main() {
   }
   cout << endl;
   cout << "This should be 32: " << v->getCapacity() << endl;
+  cout << "This should be 17: " << v->size << endl;
+  v->remove(10);
+  cout << "This should be 11: " << (*v)[10] << endl;
+  cout << "This should be 16: " << v->size << endl;
 }

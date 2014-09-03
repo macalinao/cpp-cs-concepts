@@ -2,6 +2,7 @@ class Vector {
   public:
     Vector();
     void add(int value);
+    bool remove(int index);
     int size;
     int* data;
     int getCapacity();

@@ -14,6 +14,20 @@ void Vector::add(int value) {
   data[size - 1] = value;
 }
 
+bool Vector::remove(int index) {
+  if (index + 1 > size) {
+    // Ignore
+    return false;
+  }
+
+  for (int i = index; i < size; i++) {
+    data[i] = data[i + 1];
+  }
+  data[size] = 0;
+  size -= 1;
+  return true;
+}
+
 void Vector::reserve(int newCapacity) {
   capacity = newCapacity;
   int* newData = new int[capacity];
